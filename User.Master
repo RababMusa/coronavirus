@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Codefile="User.master.cs" Inherits="WebApplication1.User" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="cssLogin/bootstrap.min.css" rel="stylesheet" />
+    <link href="cssLogin/styleLogin.css" rel="stylesheet" />
+    <link href="cssLogin/mediaLogin.css" rel="stylesheet" />
+    <link href="cssLogin/all.css" rel="stylesheet" />
+      <link href="css%20Home/style.css" rel="stylesheet" />
+    <link href="css%20Home/media.css" rel="stylesheet" />
+    <link href="css%20Home/all.css" rel="stylesheet" />
+     <link href="https://fonts.googleapis.com/css?family=Paytone+One&display=swap" rel="stylesheet">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   
+       <form id="form1" runat="server">
+         <script src="js/jQuery.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/function.js"></script>
+     <div class="hadder">
+        <header>
+              
+                <div class="navbar2">
+                    <nav class="navbar navbar-light bg-light">
+                        <a class="navbar-brand">
+                            <img src="img/newlogo.png"style="width:50px;" class="logo" />
+                            <span style="color: white;font-weight:bold;font-family:'Fugaz One', cursive; font-size:30px;">Giffty</span>
+                        </a>
+                        <div style="display:flex; ">
+                        <div class="form-inline">
+                            <asp:TextBox ID="search" runat="server" CssClass="form-control mr-sm-2" placeholder="Search" aria-label="Search" TextMode="Search"></asp:TextBox>
+                          <button class="btn  my-2 my-sm-0" type="submit">Search</button>
+                           </div>
+                          <div style="margin-left:20px; padding-top:5px">
+                        <span class="fas fa-user" style="font-size:25px; color:#eee"></span>
+                        <span class="fas fa-shopping-cart" style="font-size:25px; color:#eee"></span>
+                     </div>
+                            </div>
+                     </nav>
+                </div>
+            <div class="navbar3 ">
+                <nav class="navbar navbar-expand-lg shift navbar-light ">
+
+                  <%--  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>--%>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarText">
+
+                        <ul class="nav navbar-nav" style="margin:auto;">
+                       
+                            <li class="nav-item active" style="margin-right:70px;">
+                                <a class="nav-link " href="#">Wedding</a>
+                            </li>
+                            <li class="nav-item"  style="margin-right:70px;">
+                                <a class="nav-link" href="#">Brithday</a>
+                            </li>
+                            <li class="nav-item"  style="margin-right:70px;">
+                                <a class="nav-link" href="#">Frindship</a>
+                            </li>
+                            <li class="nav-item"  style="margin-right:70px;">
+                                <a class="nav-link" href="#">Graduation</a>
+                            </li>
+                            <li class="nav-item"  style="margin-right:70px;">
+                                <a class="nav-link" href="#">Valintineday</a>
+                            </li>
+                            <li class="nav-item"  style="margin-right:70px;">
+                                <a class="nav-link" href="#">Flowers</a>
+                            </li>
+                                </ul>
+                    
+                    </div>
+                       </nav>
+            </div>
+         
+            </header>
+         </div>
+        <!---------------------End Header--------------------------->
+
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                      <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+
+          <!----------------------- Start Footer--------------------------->
+        <div class="card text-center">
+           <%-- <div class="card-body foot">
+                <h5 class="card-title">Giffty Shop</h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <a href="#" class="btn ">Go to bove</a>
+            </div>--%>
+            <div class="card-footer text-muted" >
+                <p class="smallp" style="color:#eee"><small>© copyright Giffty 2019</small></p>
+                <a class="asocial" href="#"><span style="color:#eee" class="fab fa-twitter"></span></a>
+                <a class="asocial" href="#"><span style="color:#eee" class="fab fa-instagram"></span></a>
+                <a class="asocial" href="#"><span style="color:#eee" class="fab fa-facebook-f"></span></a>
+            </div>
+        </div>
+
+
+        <script src="js/jQuery.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/functions.js"></script>
+    </form>
+   
+</body>
+</html>

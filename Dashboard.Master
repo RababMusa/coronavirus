@@ -1,0 +1,280 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Dashboard.master.cs" Inherits="WebApplication1.Dashboard" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="css3/style.css" rel="stylesheet" />
+    <link href="css3/style1.css" rel="stylesheet" />
+    <link href="css3/styleEditor.css" rel="stylesheet" />
+       <link href="css3/media.css" rel="stylesheet"/>
+    <link href="css3/media1.css" rel="stylesheet"/>
+
+    <link href="cssNow/media30.css" rel="stylesheet" />
+    <link href="cssNow/style30.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <link href="Css%20Profilee/StyleProfile.css" rel="stylesheet" />
+
+       <link href="css2/styleEditor.css" rel="stylesheet" />
+        <link href="css%20Dashboard/style.css" rel="stylesheet" />
+        <link href="css%20Dashboard/style1.css" rel="stylesheet" />
+        <link href="css%20Dashboard/all.css" rel="stylesheet" />
+        <link href="css%20Dashboard/media.css" rel="stylesheet" />
+    
+
+        <link href="css2/mediaProfile.css" rel="stylesheet" />
+        <link href="css2/media1.css" rel="stylesheet" />
+        <link href="css2/style2.css" rel="stylesheet" />
+    
+
+        <link href="css2/bootstrap.min.css" rel="stylesheet" />
+
+        <link href="css2/all.css" rel="stylesheet" />
+      <%--  <link href="css2/style3Admin_Editor.css" rel="stylesheet" />--%>
+         <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' rel='stylesheet'/>
+       
+        <link href="cssGift/style.css" rel="stylesheet" />
+        <link href="cssGift/bootstrap.min.css" rel="stylesheet" />
+        <link href="cssGift/media.css" rel="stylesheet" />
+        
+        <link href="CSSTABLE/styletable-customer.css" rel="stylesheet" />
+    <script src="js/functions.js"></script>
+<%--        <link href="style%20customer/styletable-customer.css" rel="stylesheet" />--%>
+        <link href="style%20customer/bootstrap.min.css" rel="stylesheet" />
+
+        <link href="CSS%20Profile/Profile.css" rel="stylesheet" />
+    <link href="css%20Dashboard/cssActive.css" rel="stylesheet" />
+    <link href="css%20Dashboard/style3.css" rel="stylesheet" />
+    <link href="css%20Dashboard/medialast.css" rel="stylesheet" />
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oranienbaum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Age', 'Weight'],
+          [ 8,      12],
+          [ 4,      5.5],
+          [ 11,     14],
+          [ 4,      5],
+          [ 3,      3.5],
+          [ 6.5,    7]
+        ]);
+ 
+        var options = {
+          title: 'Age vs. Weight comparison',
+          legend: 'none',
+          crosshair: { trigger: 'both', orientation: 'both' },
+          trendlines: {
+            0: {
+              type: 'polynomial',
+              degree: 3,
+              visibleInLegend: true,
+            }
+          }
+        };
+ 
+        var chart = new google.visualization.ScatterChart(document.getElementById('polynomial2_div'));
+        chart.draw(data, options);
+      }
+    </script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script type="text/javascript">
+        google.charts.load("current", {packages:["corechart"]});
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+            ['Task', 'Hours per Day'],
+            ['Work',     11],
+            ['Eat',      2],
+            ['Commute',  2],
+            ['Watch TV', 2],
+            ['Sleep',    7]
+          ]);
+  
+          var options = {
+            title: 'My Daily Activities',
+            pieHole: 0.4,
+          };
+  
+          var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+          chart.draw(data, options);
+        }
+      </script>
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages:['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var oldData = google.visualization.arrayToDataTable([
+        ['Name', 'Popularity'],
+        ['Cesar', 250],
+        ['Rachel', 4200],
+        ['Patrick', 2900],
+        ['Eric', 8200]
+      ]);
+  
+      var newData = google.visualization.arrayToDataTable([
+        ['Name', 'Popularity'],
+        ['Cesar', 370],
+        ['Rachel', 600],
+        ['Patrick', 700],
+        ['Eric', 1500]
+      ]);
+  
+      var colChartBefore = new google.visualization.ColumnChart(document.getElementById('colchart_before'));
+      var colChartAfter = new google.visualization.ColumnChart(document.getElementById('colchart_after'));
+      var colChartDiff = new google.visualization.ColumnChart(document.getElementById('colchart_diff'));
+      var barChartDiff = new google.visualization.BarChart(document.getElementById('barchart_diff'));
+  
+      var options = { legend: { position: 'top' } };
+  
+      colChartBefore.draw(oldData, options);
+      colChartAfter.draw(newData, options);
+  
+      var diffData = colChartDiff.computeDiff(oldData, newData);
+      colChartDiff.draw(diffData, options);
+      barChartDiff.draw(diffData, options);
+    }
+  </script> -->
+  
+ 
+<!-- <style type="text/css">/* Chart.js */
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style>
+   -->
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <script src="jstable/jQuery.js"></script>
+        <script src="jstable/popper.js"></script>
+        <script src="jstable/bootstrap.min.js"></script>
+    <script src="js/functions.js"></script>
+    <form id="form1" runat="server">
+        <div style="background-color:#F8F9FA">
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+               <div class="main" style="margin-bottom:40px">
+        <div class="nav-bar navtoggle">
+            <nav class="navbarside navbar-expand-lg nav-div shift navbar-light">
+                <%--<a  class="navbar-brand bradnone">  
+                    <div class="details">
+                           <img src="img/newlogo.png" style="width:50px;" class="IMAGELOGO">--%>
+                    <%--  <h3  class="Admin-Names">Giffty </h3>--%>
+                       
+                <%--    </div>
+                  </a>--%>
+                    <button class="navbar-toggler btntog" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon btntoggle"></span>
+                    </button>
+                    <div class="collapse navbar-collapse navBars" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto d-flex flex-column ulnav" style="width:100%" runat="server">
+                          <li class="nav-item LOGO newlogo" runat="server" id="lilogo" style="padding-top:14px;">
+                         <%--   <span class="fas fa-laugh-wink smail1"></span>
+                             <a class="navbar-brand name Admin-Names " href="#">Giffty</a>--%> 
+                             <%--   <h3  class="Admin-Names">Giffty </h3>--%>
+                                  <img src="img/newlogo.png" style="width:50px;" class="logomedia">
+                          </li>
+                          
+                        <li class="nav-item item" style="height:50px;padding-top:14px; padding-bottom:14px" runat="server" id="dash" >
+                                <span class="fas fa-tachometer-alt smail" style="font-size:25px"></span>
+                            <asp:HyperLink ID="HyperLink8" runat="server"  Font-Size="17px" NavigateUrl="~/Dashboard.aspx"  CssClass="hyper ">Dashboard</asp:HyperLink>
+                          <%--<a class="nav-link name1" href="#">Dashboard</a>--%>
+                        </li> 
+                       
+                        <li class="nav-item item" style="height:50px;padding-top:14px; padding-bottom:14px" id="profile" runat="server" >
+                                <span class="fas fa-user-circle smail"  style="font-size:25px"></span>
+                            <asp:HyperLink ID="HyperLink1" css="a" runat="server"  Font-Size="17px" NavigateUrl="~/Admin-EdiorProfile.aspx" CssClass="hyper">Profile</asp:HyperLink>
+                        </li>
+                          <li runat="server" id="lieditor" style="height:50px;padding-top:14px; padding-bottom:14px" class="nav-item item">
+                               <span class="fas fa-user-edit smail"  style="font-size:25px"></span>
+                            <asp:HyperLink ID="HyperLink7" runat="server" Font-Size="17px" NavigateUrl="~/Editor.aspx" CssClass="hyper">Editor</asp:HyperLink>
+                          </li>
+
+              <%--        <asp:Panel ID="Panel1" runat="server">
+                       <li class="nav-item"style="height:50px" id="lieditor"  runat="server" > 
+                                <span class="fas fa-user-edit smail"  style="font-size:25px"></span>
+                            <asp:HyperLink ID="HyperLink2" runat="server" Font-Size="17px" NavigateUrl="~/Editor.aspx" CssClass="hyper">Editor</asp:HyperLink>
+<%--                          ////// // <a class="nav-link name1 " href="#">Editor</a>//////////
+                        </li> </asp:Panel>--%>
+
+                        <li class="nav-item item" style="height:50px;padding-top:14px; padding-bottom:14px" runat="server" id="categories" >
+                                <span class="fas fa-list-ul smail "  style="font-size:25px"></span>
+                            <asp:HyperLink ID="HyperLink3" runat="server"  Font-Size="17px" NavigateUrl="~/View_Categories.aspx" CssClass="hyper">Categories</asp:HyperLink>
+                          <%--  <a class="nav-link name1" href="#">Gatogores</a>--%>
+                        </li> 
+                        <li class="nav-item item" style="height:50px;padding-top:14px; padding-bottom:14px" runat="server" id="orders"  >
+                                <span class="fab fa-first-order smail"  style="font-size:25px"></span>
+                            <asp:HyperLink ID="HyperLink4" runat="server"  Font-Size="17px" NavigateUrl="~/View_Orders.aspx" CssClass="hyper">Orders</asp:HyperLink>
+                          <%--  <a class="nav-link name1" href="#">Orders</a>--%>
+                        </li>
+                        <li class="nav-item item" style="height:50px;padding-top:14px; padding-bottom:14px" runat="server" id="gifts" >
+                                <span class="fas fa-gift smail"  style="font-size:25px"></span>
+                            <asp:HyperLink ID="HyperLink5" runat="server" Font-Size="17px" NavigateUrl="~/VIEW_GIFTY.aspx" CssClass="hyper">Gifts</asp:HyperLink>
+                            <%--<a class="nav-link name1" href="#">Gifts</a>--%>
+                        </li> 
+                        <li class="nav-item item" style="height:50px;padding-top:14px; padding-bottom:14px" runat="server" id="customers" >
+                                <span class="fas fa-users smail"  style="font-size:25px"></span>
+                            <asp:HyperLink ID="HyperLink6" runat="server" Font-Size="17px" NavigateUrl="~/VIEW-CUSTOMER.aspx" CssClass="hyper">Customer</asp:HyperLink>
+                            <%--<a class="nav-link name1" href="#">Customer</a>--%>
+                        </li>
+                        <li class="nav-item item" style="height:50px;padding-top:14px; padding-bottom:14px" runat="server" id="signout" >
+                            <span class="fas fa-sign-out-alt smail"  style="font-size:25px"></span>
+                            <asp:LinkButton ID="btnsign" runat="server" CssClass="hyper"  Font-Size="17px" OnClick="btnsign_Click">Sign out</asp:LinkButton>
+<%--                            <asp:HyperLink ID="HyperLink7" runat="server" NavigateUrl="~/Login.aspx" CssClass="hyper">Sign out</asp:HyperLink>--%>
+                          <%--  <a class="nav-link name1" href="#">Sign out</a>--%>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+                   <%--navadmintwo--%>
+                <div class="page-div ">
+                  <div class="div-head" >
+                      <nav class="navbar justify-content-start" style="display:flex">
+                          <a  class="navbar-brand bradnonetwo">  
+                              <div class="details">
+                                <h2  class="Admin-Names ">Giffty </h2>
+                              </div>
+                            </a>
+                      </nav>
+                  </div>
+              </div>
+    </div>
+             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+            </asp:ContentPlaceHolder>
+          <%--  <div class=" text-center" >
+    --%>
+    
+    <div class="card-footer text-muted foot text-center ">
+      
+     <p class="pp1"> © Copyright Giffty 2020-2021</p>
+      <div>
+        <img src="img/gifft.png" class="img1">
+      </div>
+    </div>
+  </div>
+       <%-- </div>--%>
+    </form>
+
+    
+
+
+</body>
+
+</html>
+            
+            
